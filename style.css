@@ -1,0 +1,21 @@
+body{
+    font-size: 14px;
+    background-color: aliceblue;
+}
+input{
+    display: block;
+}
+form{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+}
+input[type="submit"]{
+    margin-top: 10px;
+    cursor: pointer;
+}
+#res{
+    left: 10px;
+    text-align: center;
+    color: brown;
+}
