@@ -15,6 +15,7 @@ input[type="submit"]{
     cursor: pointer;
 }
 #res{
+
     left: 10px;
     text-align: center;
     color: brown;

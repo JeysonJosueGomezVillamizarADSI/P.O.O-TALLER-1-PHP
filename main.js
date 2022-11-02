@@ -1,16 +1,15 @@
 addEventListener("DOMContentLoaded", (e)=>{
-
     let myForm = document.querySelector("#Formulario");
     myForm.addEventListener("submit", async(e)=>{
         e.preventDefault();
-        let data = Object.fromEntries(new FormData(e.target));
+        let Formulario = e.target;
+        let data = Object.fromEntries(new FormData(Formulario));
         let config = {
-            method: myForm.method,
+            method :Formulario.method,
             body: JSON.stringify(data)
         };
-        let peticion = await fetch(myForm.action,config);
-        let res = await peticion.json();
-        document.querySelector("#res").innerHTML = res.mensaje;
-        
+        let peticion = await fetch(Formulario.action,config);
+        let resultado = await peticion.text();
+        document.querySelector("#resultado").insertAdjacentElement ("beforeend",resultado);
     })
 })
