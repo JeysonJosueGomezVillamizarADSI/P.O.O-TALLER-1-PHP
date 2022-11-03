@@ -1,37 +1,64 @@
 <?php
-    header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json; charset=utf-8');
     $_DATA = json_decode(file_get_contents("php://input"),true);
-    class factura{
-        public $codigo;
-        public $unidades;
-        
-        public function __construct(int $codigo, int $unidades){
-            $this->codigo = $codigo;
-            $this->unidades = $unidades;
+    class promedio{
+
+        public $sumA;
+        public $canA;
+        public $sumB;
+        public $canB;
+        public $sumC;
+        public $canC;
+
+        public function __construct( nt $sumA,int $canA,int $sumB,int $canB, int $sumC,int $canC){
+            $this->sumA = $sumA;
+            $this->canA = $canA;
+            $this->sumB = $sumB;
+            $this->canB = $canB;
+            $this->sumC = $sumC;
+            $this->canC = $canC;
         }
 
 
-        public function numerocodigo(){
-            $codigo=match($this->codigo){
-                1=> $codigo =20400,
-                2=> $codigo =34896,
-                3=>$codigo =37850,
-                4=>$codigo =40345,
-                default=>$codigo="Codigo Incorrecto"
-            };
-            return $codigo;
-        }
+        public function promedioF():string{
 
-        public function totalpagar():string{
-            $codigo=$this->numerocodigo();
-            $totalpagar=$codigo*$this->unidades;
-            return $totalpagar;
+            $sumA = $this->sumA;
+            $canA = $this->canA;
+            $sumB = $this->sumB;
+            $canB = $this->canB;
+            $sumC = $this->sumC;
+            $canC = $this->canC;
+
+            $canA<1?$proA=0:$proA = $sumA/$canA;
+            $canB<1?$proB=0:$proB = $sumB/$canB;
+            $canC<1?$proC=0:$proC = $sumC/$canC;
+
+            if($proA>$proB && $proA>$proC){
+                if($proB>$proC){
+                    return "C";
+                } else{
+                    return "B";
+                }
+            } else if($proB>$proA && $proB>$proC){
+                if($proA>$proC){
+                    return "C";
+                } else{
+                    return "A";
+                }
+            } else if($proC>$proA && $proC>$proB){
+                if($proA>$proB){
+                    return "B";
+                } else{
+                    return "A";
+                }
+            } else{
+                return "A, B, C";
+            }
         }
     }
-        
-    $listado=new factura(codigo:$_DATA['codigo'],unidades:$_DATA['unidades']);
-    echo ($listado->totalpagar());
+    $lista = new promedio(sumA:$_DATA[0],canA:$_DATA[1],sumB:$_DATA[2],canB:$_DATA[3],sumC:$_DATA[4],canC:$_DATA[5]);
+    echo($lista->promedioF());
+?>
 
 ?>
 

@@ -20,3 +20,12 @@ input[type="submit"]{
     text-align: center;
     color: brown;
 }
+.opcion{
+    width: 100px;
+    height: 25px;
+    outline: none;}
+
+.carrera{
+        width: 100px;
+        height: 25px;
+        outline: none;}

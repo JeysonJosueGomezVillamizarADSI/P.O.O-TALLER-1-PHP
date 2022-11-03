@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 </title>
+    <title>Ejercicio 3 </title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
 <body>
-    <h2>De la galería de productos, el usuario introducirá el código y el número de unidades del producto que desea comprar.
-         El programa determinará el total a pagar, como una factura</h2>
-        <form id="Formulario" action="api.php" method="post">
-            <label>Ingrese el codigo del producto : </label>
-            <input type="number" name="codigo">
-            <label>Numeros de unidades  que desea:</label>
-            <input type="number" name="unidades">
-            <input type="submit" value="Total a pagar ">
+    <h2>Escribir un programa que permita ingresar para los N alumnos de una universidad: SEXO (‘M’ o ‘F’), edad y carrera (‘A’,’B’,’C’). Imprimir la carrera con menor promedio de edad de sus alumnos que son varones</h2>
+        <form id="formulario" action="api.php" method="post">
+            <label>Ingrese el numero de alumnos : </label>
+            <input type="number" name="alumnos">
+            <label>Seleccione el sexo: </label>
+            <div class="opcion">
+                <select name="sexo"  id="sexo">
+                    <option value="masculino">M</option>
+                    <option value="femenino">F</option>
+                </select>
+            </div>
+            <label>Ingrese la edad del alumno</label>
+            <input type="number" name="edad" id="edad">
+            <label>Seleccione la carrera del alumno </label>
+            <div class="carrera">
+                <select name="carrera" id="carrera">
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                </select>
+            </div>
+            <input type="submit" value="Promedio de Edad y Alumnos Varones">
         </form>
         <pre id="resultado">
-            * El Total del pago es: 
+        La carrera  con menor promedio de edad y alumnos que son varones es: 
         </pre>
 </body>
 </html>
