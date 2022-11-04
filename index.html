@@ -8,32 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
-<body>
-    <h2>Escribir un programa que permita ingresar para los N alumnos de una universidad: SEXO (‘M’ o ‘F’), edad y carrera (‘A’,’B’,’C’). Imprimir la carrera con menor promedio de edad de sus alumnos que son varones</h2>
-        <form id="formulario" action="api.php" method="post">
-            <label>Ingrese el numero de alumnos : </label>
-            <input type="number" name="alumnos">
-            <label>Seleccione el sexo: </label>
-            <div class="opcion">
-                <select name="sexo"  id="sexo">
-                    <option value="masculino">M</option>
-                    <option value="femenino">F</option>
-                </select>
-            </div>
-            <label>Ingrese la edad del alumno</label>
-            <input type="number" name="edad" id="edad">
-            <label>Seleccione la carrera del alumno </label>
-            <div class="carrera">
-                <select name="carrera" id="carrera">
-                    <option value="a">A</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                </select>
-            </div>
-            <input type="submit" value="Promedio de Edad y Alumnos Varones">
-        </form>
-        <pre id="resultado">
-        La carrera  con menor promedio de edad y alumnos que son varones es: 
-        </pre>
+<section class="seccion">
+    <h2>Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó $10, el segundo $20, el
+        tercero $40 y así sucesivamente. Realice un algoritmo para determinar cuánto debe pagar mensualmente y el
+        total de lo que pagó después de los 20 meses. (Investigación código DATE o DATATIME javaScricpt)</h2>
+    <form class="form" id="form" method="post" action="api.php">
+        <label class="titulo">Pago en 20 meses</label>
+        <div>
+            <label>Ingresa la cantidad de meses</label>
+            <input type="date" id="meses" class="meses" name="meses" pattern="[0-9]+" required>
+        </div>
+        <div>
+            <input type="submit" class="dia">
+        </div>
+        <div><p id="res"></p>
+        </div>
+    </form>
 </body>
 </html>
