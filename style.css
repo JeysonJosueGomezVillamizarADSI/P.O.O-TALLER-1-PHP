@@ -23,7 +23,8 @@ input[type="submit"]{
 .opcion{
     width: 100px;
     height: 25px;
-    outline: none;}
+    outline: none;
+}
 
 .carrera{
         width: 100px;

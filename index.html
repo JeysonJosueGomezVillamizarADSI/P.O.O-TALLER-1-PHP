@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3 </title>
+    <title>Ejercicio 5 </title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
-<section class="seccion">
-    <h2>Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó $10, el segundo $20, el
-        tercero $40 y así sucesivamente. Realice un algoritmo para determinar cuánto debe pagar mensualmente y el
-        total de lo que pagó después de los 20 meses. (Investigación código DATE o DATATIME javaScricpt)</h2>
+<body>
+    
+    <h2>Un empleado de la tienda “Tiki Taka” realiza N ventas durante el día, se requiere saber cuántas de ellas
+        fueron mayores a $1000, cuántas fueron mayores a $500 pero menores o iguales a $1000, y cuántas fueron
+        menores o iguales a $500. Además, se requiere saber el monto de lo vendido en cada categoría y de forma
+        global.</h2>
     <form class="form" id="form" method="post" action="api.php">
-        <label class="titulo">Pago en 20 meses</label>
+        <label class="titulo">Ventas de Tiki Taka</label>
         <div>
-            <label>Ingresa la cantidad de meses</label>
-            <input type="date" id="meses" class="meses" name="meses" pattern="[0-9]+" required>
+            <label>Ingresa la cantidad de ventas</label>
+            <input type="number" id="cantidad" class="cantidad" name="cantidad" pattern="[0-9]+" required disabled >
         </div>
         <div>
-            <input type="submit" class="dia">
+            <label>Ingrese el precio del producto</label>
+            <input type="number" id="precio" class="precio" name="precio" pattern="[0-9]+" required disabled>
         </div>
-        <div><p id="res"></p>
+        <div>
+            <input type="submit" class="dia" value="Enviar">
+        </div>
+        <div>
+            <p id="res"></p>
         </div>
     </form>
 </body>
